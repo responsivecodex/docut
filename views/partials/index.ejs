@@ -1,0 +1,268 @@
+<div class="microlayout position-absolute top-0 end-0 theme-bg-heavymetal">
+  <div><img class="img-fluid svg-ie-fix" src="/images/RC.png" aria-label="xxx" loading="lazy" /></div>
+  <div>
+    <p class="m-0">Responsive Codex</p>
+    <p class="m-0 silver"><%- lang.connectWithUs%>:</p>
+  </div>
+  <div><i class="fa fa-share-alt" aria-hidden="true"></i></div>
+</div>
+
+<section class="d-flex justify-content-evenly flex-sm-row flex-column mb-4">
+  <a
+    id="btnHide"
+    class="btn btn-secondary col-1 ms-2 display-sm-no"
+    data-bs-toggle="collapse"
+    href="#Instructions"
+    role="button"
+    aria-expanded="false"
+    aria-controls="Instructions" aria-label="btnHide"
+  >
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+  </a>
+  <div id="Instructions" class="card m-sm-0 m-3 mt-2 face dark rounded-medium col-sm-4 col-11 collapse show">
+    <div class="card-header">
+      <h1><%- lang.headerApp %></h1>
+      <p><%- lang.descriptionApp %></p>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title relative"><%- lang.instructionsTitle01 %></h4>
+      <ul>
+        <li><%- lang.instrT01_01 %></li> 
+        <li><%- lang.instrT01_02 %></li>
+        <li><%- lang.instrT01_03 %></li>
+        <li><%- lang.instrT01_04 %></li>
+      </ul>
+      <h4 class="card-title"><%- lang.instructionsTitle02 %></h4>
+      <ul>
+        <li><%- lang.instrT02_01%></li>
+        <li><%- lang.instrT02_02%></li>
+        <li><%- lang.instrT02_03%></li>
+      </ul>
+
+      <p class="card-text"><%- lang.supportMe01%></p>
+
+      <a
+        href="https://www.paypal.com/donate?business=8ZK5LYET8NU6G&amount=4.5&no_recurring=0&item_name=Coffee+for+my+team&currency_code=USD"
+        class="btn btn-secondary col"
+        target="_blank"
+        rel="noopener noreferrer" aria-label="link-paypal"
+      >
+        <i class="fa fa-paypal me-2" aria-hidden="true"></i>
+        <%- lang.supportMe02%></a
+      >
+    </div>
+  </div>
+
+  <div class="d-flex align-items-start flex-column col-sm-7 col-11 m-sm-0 mx-3">
+    <div class="card col-12 m-0 p-3 mt-5 face rounded-medium dark">
+      <div class="card-header p-0">
+        <h2><%- lang.trimTitle%></h2>
+      </div>
+      <div class="card-body p-0 shorten">
+        <form action="/shorten" method="post">
+          <fieldset>
+            <input type="text" id="kmsd" name="kmsd" class="hidden" value="No" aria-label="kmsd"/>
+            <label for="longUrl" class="form-label"><%- lang.trimLabel01%></label>
+            <div class="d-flex align-items-center">
+              <input
+                id="longUrl"
+                name="longUrl"
+                class="form-control flex-fill rounded-soft"
+                type="text"
+                size="100"
+                placeholder="https://responsivecodex.wordpress.com"
+                aria-label="longUrl"
+                value="<%= data.shortenUrl %>"
+              />
+              <button id="btnClearInputLU" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="<%= lang.eraseField %>" class="ms-1 face p-0 rounded-circle flex-fill" aria-label="btnClearInputLU">
+                <i class="fa fa-eraser flex-shrink-1 p-1 white" aria-hidden="true"></i>
+              </button>
+            </div>
+          </fieldset>
+          <div class="submit d-flex flex-row mt-2 align-items-center">
+            <button id="btnLongUrl" disabled="disabled" type="button" class="me-3 btn btn-secondary face rounded-soft" aria-label="btnLongUrl">
+              <%- lang.trimBtn01%>
+            </button>
+            <p class="m-0 p-0 ms-5" id="shortenMsg"><%= data.msgShortenUrl %></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card col-12 m-0 p-3 mt-5 face rounded-medium dark">
+      <div class="card-header p-0">
+        <h2><%- lang.testTitle%></h2>
+      </div>
+      <div class="card-body p-0">
+        <form action="/" method="get">
+          <fieldset>
+            <label for="shortenUrl" class="form-label"><%- lang.testLabel01%></label>
+            <div class="d-flex align-items-center">
+              <input
+                type="text"
+                id="shortenUrl"
+                name="shortenUrl"
+                class="form-control flex-fill rounded-soft"
+                size="54"
+                placeholder="https://docut.herokuapp.com/HgHASGKDUijc"
+                aria-label="shortenUrl"
+                value="<%= data.goUrl %>"
+              />
+              <button id="btnClearInputGo" type="button" class="ms-1 face p-0 rounded-circle flex-fill" aria-label="btnClearInputGo" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="<%= lang.eraseField %>" >
+                <i class="fa fa-eraser flex-shrink-1 p-1 white" aria-hidden="true"></i>
+              </button>
+            </div>
+          </fieldset>
+
+          <div class="d-flex flex-row mt-2 align-items-center">
+            <button id="btnGo" disabled="disabled" type="button" class="me-3 btn btn-secondary face rounded-soft" aria-label="btnGo">
+              <%- lang.testBtn01%>
+            </button>
+            <p class="m-0 p-0 ms-5" id="goMsg"><%= data.msgGoUrl %></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card col-12 m-0 p-3 mt-5 face rounded-medium dark">
+      <div class="card-header p-0">
+        <h2 class="small"><%- lang.extLinksTitle%></h2>
+      </div>
+      <div class="card-body p-0 d-flex flex-column">
+        <a
+          class=""
+          href="https://bitly.com/"
+          aria-label=""
+          target="_blank"
+          rel="noopener noreferrer"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top" aria-label="link-bitly"
+          title="Bit.ly"
+          >https://bitly.com/</a
+        >
+        <a
+          class=""
+          href="https://www.shorturl.at/"
+          aria-label=""
+          target="_blank"
+          rel="noopener noreferrer"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top" aria-label="link-shorturl"
+          title="short url"
+          >https://www.shorturl.at/</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="infoUrl" tabindex="-1" aria-labelledby="infoUrlLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content face darken">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoUrlLabel"><%- lang.mdlDocutTitle%></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" aria-label="btnClose"></button>
+      </div>
+      <div class="modal-body">
+        <label for="shortenUrl" class="form-label"><%- lang.mdlDocutLabel01%></label>
+        <input
+          type="text"
+          id="mdlUrl"
+          name="mdlUrl"
+          size="48"
+          class="form-control face"
+          placeholder="https://docut.herokuapp.com/HgHASGKDUijc"
+          aria-label="mdlUrl"
+          value="<%= data.goUrl %>"
+        />
+      </div>
+      <div class="modal-footer">
+        <button id="btnCopy" type="button" class="btn btn-secondary face" aria-label="btnCopy"><%- lang.mdlDocutBtn01%></button>
+        <button type="button" class="btn btn-secondary face" data-bs-dismiss="modal" aria-label="btnClose2"><%- lang.mdlDocutLabel02%></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="avExceed" tabindex="-1" aria-labelledby="avExceedLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content face darken">
+      <div class="modal-header">
+        <h5 class="modal-title" id="avExceedLabel"><%- lang.mdlAvTitle%>Wait!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" aria-label="btnClose3"></button>
+      </div>
+      <div class="modal-body">
+        <p><%- lang.mdlAvBody%></p>
+        <p class="hidden"></p>
+      </div>
+      <div class="modal-footer">
+        <button id="btnDelete" type="button" class="btn btn-secondary face" aria-label="btnDelete"><%- lang.mdlAvBtn01%></button>
+        <button id="dismiss" type="button" class="btn btn-secondary face" data-bs-dismiss="modal" aria-label="btnClose4"><%- lang.mdlAvBtn02%></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="askCookies" tabindex="-1" aria-labelledby="avCookiesLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content face darken">
+      <div class="modal-header">
+        <h5 class="modal-title" id="avCookiesLabel"><%- lang.mdlCookiesTitle%></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" aria-label="btnClose5"></button>
+      </div>
+      <div class="modal-body">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button
+              class="nav-link active"
+              id="nav-accept-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-accept"
+              type="button"
+              role="tab"
+              aria-controls="nav-accept"
+              aria-selected="true"  aria-label="nav-accept-tab"
+            >
+            <%- lang.mdlCookiesTab01%>
+            </button>
+            <button
+              class="nav-link"
+              id="nav-moreinfo-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-moreinfo"
+              type="button"
+              role="tab"
+              aria-controls="nav-moreinfo"
+              aria-selected="false"   aria-label="nav-moreinfo-tab"
+            >
+            <%- lang.mdlCookiesTab02%>
+            </button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-accept" role="tabpanel" aria-labelledby="nav-accept-tab">
+            <p><%- lang.mdlCookiesBody01%>
+            </p>
+          </div>
+          <div class="tab-pane fade" id="nav-moreinfo" role="tabpanel" aria-labelledby="nav-moreinfo-tab">
+            <ul>
+              <li><%- lang.mdlCookiesLI01%>
+              </li>
+              <li><%- lang.mdlCookiesLI02%>
+              </li>
+              <li><%- lang.mdlCookiesLI03%>
+              </li>
+              <li><%- lang.mdlCookiesLI04%>
+              </li>
+              <li><%- lang.mdlCookiesLI05%>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="cookiesAccept" type="button" class="btn btn-secondary face" onClick="acceptCookies();"  aria-label="cookiesAccept"><%- lang.mdlCookiesBtn1%></button>
+        <button id="cookiesDenied" type="button" class="btn btn-secondary face" onClick="noCookies();"  aria-label="cookiesDenied"><%- lang.mdlCookiesBtn02%></button>
+      </div>
+    </div>
+  </div>
+</div>

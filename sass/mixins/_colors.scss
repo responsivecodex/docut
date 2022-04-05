@@ -1,0 +1,308 @@
+@use "sass:list";
+$map-colors:(
+  "mariner"     : #227ac5,
+  "congressblue": #07409a,
+  "oxfordblue"  : #011638, 
+
+"azureradiance": #007bff,
+"curiousblue" : #2894be,
+"aquaperl"    : #83B3DB, 
+"malibu"      : #5ac1ff,
+"greenblue"   : #0a71c6,
+"blueberry"   : #41a4f5,
+"denim"       : #3483c4,
+"veniceblue"  : #085a9f,
+"steelblue"   : #4682b4,
+"blue"        : #1805ff,
+  
+"lipstick"    : #c60a71,
+"elfgreen"    : #0a8b71,
+"alienarmpit" : #71c60a,
+"cornharvest" : #8b710a,
+    
+"camarone"    : #006d07,
+"chateaugreen": #47b44e,
+"olive"       : #6d6d00,
+"chenin"      : #dbdb6e,
+  
+"lemon"       : #ffff36,
+"sunglow"     : #ffc436,
+"cyan"        : #36ffff,
+"heliotrope"  : #c436ff,
+  
+"palecanary"  : #ffff93,
+"peachorange" : #ffc493,
+"freshair"    : #b2ffff,
+"mauve"       : #c493ff,
+  
+"heavymetal"  : #202320,
+"white"       : #ffffff,
+"stack"       : #606260,
+"silver"      : #cacaca,
+
+"pumpkin"     : #ff7821,
+"pastelgreeen": #5de34e,
+"redsalsa"    : #fb3345,
+"corn"        : #e8ca00,
+"blackrock"   : #030325,
+"tealblue"    : #063863,
+
+"waterleaf"   : #a3eaea,
+"lightcyan"   : #e0ffff,
+"yellow"      : #fff700
+);
+
+$colors-name: map-keys($map-colors);
+
+@mixin bg-gradient($color, $factor: 30%){
+  background-color: $color !important;
+  background: -webkit-linear-gradient(left top, darken( $color, $factor ), $color);
+  background: -moz-linear-gradient(left top, darken( $color, $factor ), $color);
+  background: linear-gradient(to left top, darken( $color, $factor ), $color);
+}
+
+
+:root{
+  @each $c in $colors-name {
+    #{"--"+$c} : map-get($map-colors, $c );
+  }
+}
+
+@each $c in $colors-name {
+  .#{$c} { 
+    color:  map-get($map-colors, $c ) !important; 
+  }
+  .hardgradient-#{$c}{
+    @include bg-gradient( map-get($map-colors, $c), 55%);
+  }
+  .gradient-#{$c}{
+    @include bg-gradient( map-get($map-colors, $c));
+  }
+  .svgcolor-#{$c}{
+    fill: map-get($map-colors, $c); 
+    stroke: map-get($map-colors, $c);  
+  }
+}
+
+$presets-heavymetal:(
+  "background": map-get($map-colors, "heavymetal"),
+  "text": map-get($map-colors, "white"),
+  "text-disabled": map-get($map-colors, "stack"),
+  "text-marked": map-get($map-colors, "chenin"),
+  "link": map-get($map-colors, "silver"),
+  "link-background": map-get($map-colors, "curiousblue"),
+  "link-hover": map-get($map-colors, "freshair"),
+  );
+  $presets-white:(
+    "background": map-get($map-colors, "white"),
+    "text": map-get($map-colors, "heavymetal"),
+    "text-disabled": map-get($map-colors, "stack"),
+    "text-marked": map-get($map-colors, "cornharvest"),
+    "link": map-get($map-colors, "azureradiance"),
+    "link-background": map-get($map-colors, "curiousblue"),
+    "link-hover": map-get($map-colors, "congressblue"),
+  );
+$presets-silver:(
+  "background": map-get($map-colors, "silver"),
+  "text": map-get($map-colors, "heavymetal"),
+  "text-disabled": map-get($map-colors, "stack"),
+  "text-marked": map-get($map-colors, "chenin"),
+  "link": map-get($map-colors, "waterleaf"),
+  "link-background": map-get($map-colors, "curiousblue"),
+  "link-hover": map-get($map-colors, "freshair"),
+);
+$presets-lipstick:(
+  "background": map-get($map-colors, "lipstick"),
+  "text": map-get($map-colors, "white"),
+  "text-disabled": map-get($map-colors, "stack"),
+  "text-marked": map-get($map-colors, "chenin"),
+  "link": map-get($map-colors, "waterleaf"),
+  "link-background": map-get($map-colors, "curiousblue"),
+  "link-hover": map-get($map-colors, "corn"),
+);
+$presets-congressblue:(
+  "background": map-get($map-colors, "congressblue"),
+  "text": map-get($map-colors, "white"),
+  "text-disabled": map-get($map-colors, "stack"),
+  "text-marked": map-get($map-colors, "yellow"),
+  "link": map-get($map-colors, "waterleaf"),
+  "link-background": map-get($map-colors, "curiousblue"),
+  "link-hover": map-get($map-colors, "lightcyan"),
+);
+$presets-mariner:(
+  "background": map-get($map-colors, "mariner"),
+  "text": map-get($map-colors, "white"),
+  "text-disabled": map-get($map-colors, "stack"),
+  "text-marked": map-get($map-colors, "yellow"),
+  "link": map-get($map-colors, "lemon"),
+  "link-background": map-get($map-colors, "curiousblue"),
+  "link-hover": map-get($map-colors, "lightcyan"),
+);
+
+
+@function str-split($string, $separator) {
+  // empty array/list
+  $split-arr: ();
+  // first index of separator in string
+  $index : str-index($string, $separator);
+  // loop through string
+  @while $index != null {
+      // get the substring from the first character to the separator
+      $item: str-slice($string, 1, $index - 1);
+      // push item to array
+      $split-arr: append($split-arr, $item);
+      // remove item and separator from string
+      $string: str-slice($string, $index + 1);
+      // find new index of separator
+      $index : str-index($string, $separator);
+  }
+  // add the remaining string to list (the last item)
+  $split-arr: append($split-arr, $string);
+
+  @return $split-arr;
+}
+
+
+
+
+
+/*~~~~~~~~~~<< Overrides bootstrap ~~*/
+
+.shadow-ondark{
+  box-shadow: 0 1rem 3rem rgba(255,255,255,.175)!important;
+}
+
+@mixin rst-color {
+  color:inherit ;
+  background-color: inherit ;
+}
+.reset-color {
+   a {
+    @include rst-color;
+    &:hover{
+      @include rst-color;
+      &::after{
+        @include rst-color;
+      }
+    }
+    &:visited{
+      @include rst-color;
+    }
+    &::after{
+      @include rst-color;
+    }
+  }
+}
+
+
+.whitening{
+  // filter: grayscale(100%) invert(100%) contrast(500%);
+  filter: grayscale(100%) brightness(5.5);
+}
+
+.saturate { filter: saturate(3); }
+.grayscale { filter: grayscale(100%); }
+.contrast { filter: contrast(160%); }
+.brightness { filter: brightness(0.25); }
+.invert { filter: invert(100%); }
+.sepia { filter: sepia(100%); }
+.huerotate { filter: hue-rotate(180deg); }
+.rss.opacity { filter: opacity(50%); }
+.blur{
+  @supports ( -webkit-filter: blur(8px) ) {
+    -webkit-filter: blur(6px);
+  }
+  filter: blur(6px);
+}
+
+@mixin set-preset($map, $id){
+  .theme-bg-#{$id}{  
+      background: map-get($map, "background") !important;  //$presets-1
+      color: inherit;
+      color: map-get($map, "text") !important;
+      em {
+        color: map-get($map, "text-marked") !important;
+        text-shadow: 0px 0px 2px rgba(0,0,0, 0.2);
+        font-weight: bolder;
+        letter-spacing: 0.1em;
+      }
+ 
+      .disabled, [disabled|=""]{
+          color: map-get($map, "text-disabled")  !important;
+      }
+      a:not([class^=btn]) {
+          &, &:visited {
+          color: inherit;
+          color: map-get($map, "link") ;
+          }
+          &:hover{
+            color: map-get($map, "link-hover") ;
+          }
+          &.active { 
+            color: map-get($map, "text") ;
+            position: relative;
+            &:hover{
+              color: map-get($map, "link-hover") ;
+              position: relative;
+
+            }
+          }
+        }
+      
+      > ul{
+        li > a:hover{
+          @media (min-width: 651px) {
+            //background: map-get($map, "link-background");
+            color: inherit;
+          }
+          color: map-get($map, "link-hover") !important;
+          border-radius: 8%;
+        }
+        // &.icon{
+          //   li a:hover{
+            //     //   border-radius: 50%;
+            //   }
+            // }
+            &.show {
+              list-style: none;
+              li::before {
+                content: "\2022";
+                color: map-get($map, "text") !important;
+                font-weight: bold;
+                display: inline-block; 
+                width: 1em;
+                margin-left: -1em;
+              }
+            }
+        }
+      nav & > a{
+        &.active{
+          @media (min-width: 900px) {
+            text-decoration: underline;
+            @supports ( text-underline-offset: 14px ) {
+              text-underline-offset: 14px;
+            }
+            text-decoration-thickness: 3px;
+          }
+        }
+        &:hover{
+          @media (min-width: 900px) {
+            text-decoration: underline;
+            @supports ( text-underline-offset: 14px ) {
+              text-underline-offset: 14px;
+            }
+            text-decoration-thickness: 3px;
+          }
+        } 
+      }  
+  }
+}
+
+
+@include set-preset($presets-heavymetal,"heavymetal");
+@include set-preset($presets-white,"white");
+@include set-preset($presets-silver,"silver");
+@include set-preset($presets-lipstick,"lipstick");
+@include set-preset($presets-congressblue,"congressblue");
+@include set-preset($presets-mariner,"mariner");
+  

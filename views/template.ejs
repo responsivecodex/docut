@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" data-textdirection="ltr">
+  <head>
+    <%- include('partials/head', dataHead); %>
+  </head>
+  <body class="" oncontextmenu="return false">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PQPT62L"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <section id="waiting" class="waiting body_start">
+      <p><%- lang.renderWait %>...</p>
+      <div class="spinner-box">
+        <div class="configure-border-1">
+          <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+          <div div class="configure-core"></div>
+        </div>
+      </div>
+    </section>
+
+    <article class="d-flex flex-column full hidden">
+      <section class="section-body fix-top overflow-auto full"><%- include(partial, {data,lang}); %></section>
+    </article>
+  </body>
+</html>

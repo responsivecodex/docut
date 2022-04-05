@@ -1,0 +1,33 @@
+.card{
+    background-color: transparent;
+    border: none;
+}
+
+.rounded-soft{
+    border-radius: 4px;
+}
+.rounded{
+    border-radius: 7px;
+}
+.rounded-medium{
+    border-radius: 20px;
+}
+
+.face {
+    box-shadow: 0 15px 35px rgba(0,0,0,.4);
+    background-color: rgb(255 255 255 / 30%);
+    filter: blur(0.3px);
+    border: 1px solid rgba(255,255,255,.43)
+}
+.face.dark{
+    background-color: rgb(0 0 0 / 50%);
+    border: 1px solid rgba(255,255,255,.5)
+}
+.face.darken{
+    background-color: rgb(0 0 0 / 63%);
+    border: 1px solid rgba(255,255,255,.65)
+}
+
+.card-header{
+    border-bottom: none;
+}

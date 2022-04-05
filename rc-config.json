@@ -1,0 +1,16 @@
+{
+    "application": {
+        "title": "",
+        "icon": "",
+        "logo": "",
+        "description": "",
+        "contact": ""
+    },
+    "setup":{
+        "environment": "development",
+        "port": "3000",
+        "host": "0.0.0.0",
+        "maxAgeCookies": 36288000000,
+        "BASE_URL": "https://localhost:3000"  
+    }
+}

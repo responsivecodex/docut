@@ -1,0 +1,199 @@
+@mixin fullbox {
+    width: 100%;
+    height: 100%;
+  }
+  
+  html,
+  body {
+    @include fullbox;
+    font-family: "Roboto", sans-serif, "Helvetica Neue", Arial;
+    font-size: 10pt;
+    font-weight: normal;
+    line-height: 1.5rem;
+    margin: 0;
+    padding: 0;
+    @supports ( background-attachment: fixed ) {
+      background-attachment: fixed;
+    }
+    scroll-behavior: smooth;
+    background:  var(--mariner) url("/images/dark-night.jpg") no-repeat fixed center;
+    background-size:cover;
+    color: white;
+  }
+  
+  
+  
+  ::-webkit-scrollbar-track
+  {
+      box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 40%;
+      background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar
+  {
+      width: 0.4em;
+      height: 0.4em;
+      background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar-thumb
+  {
+      border-radius: 10px;
+      box-shadow: inset 0 0 0.4em rgba(0,0,0,.3);
+      background-color: var(--redsalsa);
+  }
+  ::-webkit-scrollbar-thumb:hover
+  {
+      background-color: #4552cc;
+  }
+  
+  a{ text-decoration: none; }
+  
+  .full{
+    @include fullbox;
+  }
+  
+  $size-spaces: (4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 75, 100, 128, 150, 170, 200, 256, 512);
+  .box{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    img { width: 100%; }
+    svg{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .box{
+    @each $e in $size-spaces {
+      &-#{$e} {
+        $d : #{$e}+"px"; 
+        width: #{$d};
+        height: #{$d};
+      }
+    }
+  }
+  
+  @each $e in $size-spaces {
+    .w-#{$e} {
+      width: #{$e}px;
+    }
+  }
+  
+  $i: 5;
+  @while $i < 100 {
+    .w-#{$i} {
+      $k: #{$i} + '%';
+      width: #{$k};
+    }
+    $i: $i + 5;
+  }
+  
+  
+  
+  .flex{
+    display: inherit;
+    display: flex !important;
+    flex-flow: row wrap;
+    .wrap{ flex-wrap: wrap;}
+    .nowrap{ flex-wrap: nowrap;}
+    &-col{
+      display: flex !important;
+      flex-flow: column wrap;
+      &-start{
+        display: flex !important;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      &-mid{
+        display: inherit;
+        display: flex !important;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      &-end{
+        display: flex !important;
+        flex-flow: column wrap;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+    }
+    &-row{
+      display: flex !important;
+      flex-flow: column wrap;
+      &-start{
+        display: flex !important;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      &-mid{
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+      }
+      &-end{
+        display: flex !important;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+    }
+  }
+  
+  .flexme{
+    @for $var from 1 to 5 {
+      &-grow-#{$var} { flex-grow: #{$var}}
+      &-shrink-#{$var} { flex-shrink: #{$var}}
+    }
+    
+    &-start{ align-self: flex-start; justify-content: flex-start;}
+    &-mid{ align-self: center; justify-content: center;}
+    &-end{ align-self: flex-end; justify-content: flex-end;}
+  }
+  
+  
+  .noflex{
+    display: inherit;
+  }
+  
+  .scrolled-down{
+    transform:translateY(-100%); transition: all 0.3s ease-in-out;
+  }
+  .scrolled-up{
+    transform:translateY(0); transition: all 0.3s ease-in-out;
+  }
+  
+  
+  .fix-top{ padding-top: 50px; }
+  .autohide {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+  }
+  
+  .box-128-centered{
+    position: absolute;
+    top: calc(50% - 20px - 128px);
+    left: calc(50% - 128px);
+  }
+   
+  .sticky-mid{
+    position: absolute;
+    right: 8px;
+    bottom: calc(50% - 24px);
+    @media (max-width: 650px){
+      right: 0;
+      bottom: inherit;
+      top: 5px;
+    }
+  }
+  
+  .badge {
+    font-weight: 300 !important;
+  }

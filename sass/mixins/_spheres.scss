@@ -1,0 +1,29 @@
+.sphere {
+  background-color: #3b4ba3;
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 30px auto 0;
+  border-radius: 50%;
+  box-shadow: inset -25px -25px 40px rgba(0, 0, 0, 0.5);
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 220, 0.3) 0%, transparent 100%);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 220, 0.3) 0%, transparent 100%);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 220, 0.3) 0%, transparent 100%);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 220, 0.3) 0%, transparent 100%);
+}
+
+
+section.circle::before,
+.card.circle::before{
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background: linear-gradient(#f00, #f0f);
+    border-radius: 50%;
+}
+.card::before{
+  bottom: 2%;
+  left: 31%;
+  background: linear-gradient(#0098f0, #0457d3);
+}

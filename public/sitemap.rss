@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
+<rss version="2.0">
+  <channel>
+    <title>-</title>
+    <link>https://docut.herokuapp.com</link>
+    <description />
+    <item>
+      <guid>https://docut.herokuapp.com</guid>
+      <title>docut - The best url shortener, by @responsivecodex</title>
+      <link>https://docut.herokuapp.com</link>
+      <description>DOCUT is a url shortener to reduce a long link. It's a good url shortener personalized for this 2021; use online, it's free and you can get a short url (shortlink) easy to share them.</description>
+    </item>
+  </channel>
+</rss>

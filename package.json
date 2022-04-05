@@ -1,0 +1,124 @@
+{
+  "name": "docut",
+  "version": "1.0.0",
+  "description": "Minimize your URL, like Bit.ly",
+  "author": {
+    "name": "Responsive Codex",
+    "email": "responsivecodex@gmail.com",
+    "url": "https://responsivecodex.wordpress.com"
+  },
+  "contributors": [
+    {
+      "name": "Responsive Codex",
+      "email": "responsivecodex@gmail.com",
+      "url": "https://responsivecodex.wordpress.com"
+    }
+  ],
+  "bugs": "https://github.com/responsivecodex/docut/issues",
+  "homepage": "https://github.com/responsivecodex/docut#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/responsivecodex/docut.git"
+  },
+  "heroku":{
+    "type": "git",
+    "url": "https://git.heroku.com/docut.git"
+  },
+  "license": "Software Propietario",
+  "keywords": [
+    "responsive",
+    "codex",
+    "short",
+    "url",
+    "go",
+    "administration",
+    "devops",
+    "full",
+    "stack",
+    "developer",
+    "nodejs"
+  ],
+  "main": "./bin/www",
+  "private": true,
+  "scripts": {
+    "init-0": "npm i --package-lock-only && npm i",
+    "init-1": "git init",
+    "init-2": "heroku create docut",
+    "init-3": "heroku git:remote -a docut",
+    "init-4": "git add .",
+    "fast-commit-heroku": "git add . && git commit -am 'Responsive Codex - fast commit' && git push heroku master",
+    "heroku push": "git push -f heroku master", 
+    "heroku-log": "heroku logs --tail",
+    "heroku-versions": "heroku releases",
+    "heroku-process": "heroku ps",
+    "start": "node ./bin/www",
+    "nodemon": "nodemon ./bin/www",
+    "docs": "jsdoc -c jsdoc.json",
+    "test": "mocha",
+    "scss": "sass --watch ./scss:public/css",
+    "watch": "nodemon -e js,ejs,css",
+    "upt-pkg": "ncu -u && npm update & npm audit fix --force",
+    "upr-npm": "npm install -g npm@latestnpm ",
+    "git-0": "git remote add origin https://github.com/responsivecodex/docut.git",
+    "github push": "git add . && git commit -am 'Fix merge heroku' && git push -f origin master",
+    "git-erasefile1":"git stash save 'will come back to continue working later on' && git filter-branch -f --prune-empty --index-filter  'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
+    "git-erasefile2":"git filter-branch --prune-empty  -f --index-filter 'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD"
+
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "node_modules"
+    ]
+  },
+  "mocha": {
+    "diff": true,
+    "extension": [
+      "js",
+      "cjs",
+      "mjs"
+    ],
+    "package": "./package.json",
+    "reporter": "spec",
+    "slow": "75",
+    "timeout": "90000",
+    "ui": "bdd",
+    "watch-files": [
+      "lib/**/*.js",
+      "test/**/*.js"
+    ],
+    "watch-ignore": [
+      "lib/vendor",
+      "public"
+    ]
+  },
+  "engines": {
+    "node": "v14.17.1",
+    "npm": "7.17.0"
+  },
+  "browserslist": [
+    "not ie",
+    "edge",
+    "chrome"
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "awilix": "^5.0.1",
+    "bootstrap": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.3.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
+    "http-errors": "^1.7.2",
+    "i18n": "^0.13.3",
+    "jquery": "^3.6.0",
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.1.23",
+    "valid-url": "^1.0.9"
+  }
+}
