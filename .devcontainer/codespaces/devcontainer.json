@@ -1,0 +1,14 @@
+{
+	"image": "responsivecodex/alpine-nodejs",
+	"forwardPorts": [
+	3000
+	],
+	"extensions": [
+		"glenn2223.live-sass",
+		"esbenp.prettier-vscode",
+		"hansuxdev.bootstrap5-snippets",
+		"wallabyjs.quokka-vscode",
+		"joeyyizhao.mongo-runner",
+		"mongodb.mongodb-vscode"
+	]
+}
