@@ -4,6 +4,11 @@
 - Docker image
   - https://github.com/responsivecodex/alpine-nodejs.git
   - https://hub.docker.com/r/responsivecodex/alpine-nodejs
+- The environment in VM must be configurated:
+  - Environment vars:
+    - MONGO_URL
+    - MONGO_USER
+
 
 # Target
 - Build a site that provide short URL for long URL like Bit.ly
@@ -28,7 +33,7 @@
   - https://t.me/responsivecodex
   - https://codepen.io/responsivecodex
   - https://responsivecodex.livejournal.com
-   -https://github.com/responsivecodex
+  - https://github.com/responsivecodex
   - https://www.youtube.com/channel/UCphNZaOu2Q5M9n_1XuTQSnA
   - https://responsivecodex.wordpress.com
 

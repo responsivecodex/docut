@@ -57,7 +57,7 @@ div.modal-content {
 }
 
 .modal-backdrop {
-  background-color: #060058;
+  background-color: rgb(6, 0, 88);
   -webkit-backdrop-filter: blur(10px) !important;
           backdrop-filter: blur(10px) !important;
   opacity: 0.8 !important;

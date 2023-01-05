@@ -9,7 +9,7 @@ const localeMiddleware = (req, res, next) => {
     if (/(EN-)([A-Z]{2})/.test(aLang[i].toUpperCase())) {
       process.env.lang = "en-US";
       break;
-    } else if (/(ES-)([A-Z]{2})/.test(aLang[i].toUpperCase())) {
+    } else if (/(ES-)([A-Z]{2}|419)/.test(aLang[i].toUpperCase())) {
       process.env.lang = "es-MX";
       break;
     }

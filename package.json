@@ -93,8 +93,8 @@
     ]
   },
   "engines": {
-    "node": "v14.17.1",
-    "npm": "7.17.0"
+    "node": "v18.12.1",
+    "npm": "9.1.2"
   },
   "browserslist": [
     "not ie",
