@@ -1,5 +1,9 @@
 {
-	"image": "responsivecodex/alpine-nodejs",
+	"name": "Ubuntu",
+    "build": {
+        "dockerfile": "Dockerfile",
+    },
+	//"image": "responsivecodex/alpine-nodejs",
 	"forwardPorts": [
 	3000
 	],
@@ -13,6 +17,7 @@
 	],
 	"containerEnv": {
 		"MONGO_URL": "mongodb+srv://cluster0.jwm8v.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority",
-		"MONGO_USER": "rc-mongo-user02"
+		"MONGO_USER": "rc-mongo-user02",
+		"BASE_URL": "https://responsivecodex-glorious-happiness-jgggv6p6xpg2jjqx-3000.preview.app.github.dev/"
 	}
 }

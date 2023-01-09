@@ -8,6 +8,7 @@
   - Environment vars:
     - MONGO_URL
     - MONGO_USER
+    - BASE_URL
 
 
 # Target

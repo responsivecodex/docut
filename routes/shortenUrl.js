@@ -6,6 +6,7 @@ const router = express.Router();
 const Url = require("../models/Url"); // import the Url database model
 const debug = require("debug")("shortenUrl");
 const connection = require("../config/db.config");
+const path = require("path");
 
 debug("\n\nModule: shortenUrl");
 
@@ -30,7 +31,7 @@ router.post("/", async (req, res) => {
     const maxByDay = (/(localhost)/.test(baseUrl)) ? 2:500;
 
     res.setHeader("Content-Type", "text/json");
-
+    debug("baseUrl: "+baseUrl);
     // Validate because on production maybe return fail at get hostname
     if (!validUrl.isUri(baseUrl)) {
       res.send({ longUrl: longUrl, res: { state: 1, msg: "Verify base Url", data: {} } });
@@ -74,7 +75,7 @@ router.post("/", async (req, res) => {
               } else {
                 // join the generated short code the the base url
                 const urlCode = nanoid();
-                const shortUrl = baseUrl + "/" + urlCode;
+                const shortUrl = path.join(baseUrl, urlCode);
 
                 // Using the Url model and saving to the DB
                 shortenUrl = new Url({
