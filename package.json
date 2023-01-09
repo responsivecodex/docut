@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/responsivecodex/docut.git"
   },
-  "heroku":{
+  "heroku": {
     "type": "git",
     "url": "https://git.heroku.com/docut.git"
   },
@@ -47,7 +47,7 @@
     "init-3": "heroku git:remote -a docut",
     "init-4": "git add .",
     "fast-commit-heroku": "git add . && git commit -am 'Responsive Codex - fast commit' && git push heroku master",
-    "heroku push": "git push -f heroku master", 
+    "heroku push": "git push -f heroku master",
     "heroku-log": "heroku logs --tail",
     "heroku-versions": "heroku releases",
     "heroku-process": "heroku ps",
@@ -61,9 +61,8 @@
     "upr-npm": "npm install -g npm@latestnpm ",
     "git-0": "git remote add origin https://github.com/responsivecodex/docut.git",
     "github push": "git add . && git commit -am 'Fix merge heroku' && git push -f origin master",
-    "git-erasefile1":"git stash save 'will come back to continue working later on' && git filter-branch -f --prune-empty --index-filter  'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
-    "git-erasefile2":"git filter-branch --prune-empty  -f --index-filter 'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD"
-
+    "git-erasefile1": "git stash save 'will come back to continue working later on' && git filter-branch -f --prune-empty --index-filter  'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
+    "git-erasefile2": "git filter-branch --prune-empty  -f --index-filter 'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD"
   },
   "nodemonConfig": {
     "ignore": [
@@ -119,6 +118,7 @@
     "mongoose": "^6.8.3",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.23",
+    "serverless-http": "^3.1.1",
     "valid-url": "^1.0.9"
   }
 }

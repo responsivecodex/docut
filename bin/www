@@ -22,12 +22,16 @@ const http = require("http");
  */
 
 console.log("Module: www");
+var server = null;
+if (process.env.APP_ENVIRONMENT == "dev") {
+  /**
+  * Create HTTP server.
+  */
+  server = http.createServer(app);
 
-/**
- * Create HTTP server.
- */
-
-var server = http.createServer(app);
+} else {
+  server = require('serverless-http');
+}
 
 /**
  * Listen on provided port, on all network interfaces.
