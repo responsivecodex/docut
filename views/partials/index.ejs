@@ -41,15 +41,15 @@
 
       <p class="card-text"><%- lang.supportMe01%></p>
 
-      <a
-        href="https://www.paypal.com/donate?business=8ZK5LYET8NU6G&amount=4.5&no_recurring=0&item_name=Coffee+for+my+team&currency_code=USD"
-        class="btn btn-secondary col"
-        target="_blank"
-        rel="noopener noreferrer" aria-label="link-paypal"
-      >
-        <i class="fa fa-paypal me-2" aria-hidden="true"></i>
-        <%- lang.supportMe02%></a
-      >
+      <form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="business" value="8ZK5LYET8NU6G" />
+<input type="hidden" name="no_recurring" value="0" />
+<input type="hidden" name="item_name" value="<%- lang.donateSlogan%>" />
+<input type="hidden" name="currency_code" value="MXN" />
+<input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="<%- lang.donateLegend01%>" alt="<%- lang.donateLegend02%>" />
+<img alt="" border="0" src="https://www.paypal.com/es_MX/i/scr/pixel.gif" width="1" height="1" />
+</form>
+
     </div>
   </div>
 
