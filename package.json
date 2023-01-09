@@ -92,8 +92,8 @@
     ]
   },
   "engines": {
-    "node": "v18.12.1",
-    "npm": "9.1.2"
+    "node": "v16.19.0",
+    "npm": "8.19.3"
   },
   "browserslist": [
     "not ie",
