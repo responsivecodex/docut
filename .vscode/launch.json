@@ -4,6 +4,7 @@
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "node",
             "request": "launch",
@@ -16,6 +17,12 @@
                 "process.env.MONGO_URL": "mongodb+srv://cluster0.jwm8v.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority",
                 "process.env.MONGO_USER": "rc-mongo-user02"
             }
-        }
+        },
+        {
+  "type": "node",
+  "request": "launch",
+  "name": "Debugging",
+  "program": "${workspaceFolder}/app.js"
+},
     ]
 }

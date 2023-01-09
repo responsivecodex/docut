@@ -14,7 +14,7 @@ var app = express();
 
 console.log("Module: app");
 console.log("\n\nWake Up Sleeping Beauty...");
-console.log("Entorno: [" + (rcConfig.setup.environment === "development" ? "development" : "production"));
+console.log("Entorno: [" + (rcConfig.setup.environment === "development" ? "development" : "production") +"]");
 
 if (rcConfig.setup.environment === "development") {
   app.set("env", rcConfig.setup.environment);
