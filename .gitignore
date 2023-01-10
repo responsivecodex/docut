@@ -108,4 +108,4 @@ dist
 
 # Certificate for MongoDB.
 # If lose it... go to MongoDB and download it.
-config/*.pem
+#config/*.pem
