@@ -11,6 +11,6 @@
         "port": "3000",
         "host": "0.0.0.0",
         "maxAgeCookies": 36288000000,
-        "BASE_URL": "https://localhost:3000"  
+        "BASE_URL": "https://responsivecodex-glorious-happiness-jgggv6p6xpg2jjqx-3000.preview.app.github.dev/"  
     }
 }

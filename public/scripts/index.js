@@ -2,7 +2,7 @@ let wndAlert = 0;
 var mdlCookies = undefined;
 
 function noCookies() {
-  window.location.href = "http://sgarcia-resume.herokuapp.com";
+  window.location.href = "https://responsivecodex-glorious-happiness-jgggv6p6xpg2jjqx-3000.preview.app.github.dev/";
 }
 
 function acceptCookies() {

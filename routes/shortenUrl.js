@@ -21,13 +21,15 @@ debug("\n\nModule: shortenUrl");
  *  it receives a notification.
  *****************************************************************/
 router.post("/", async (req, res) => {
+  const longUrl = encodeURI(req.body.longUrl);
   try {
     var ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress || null;
 
     const baseUrl = process.env.BASE_URL;
-    const longUrl = encodeURI(req.body.longUrl);
+   
     const reuse = encodeURI(req.body.reuse);
-    const maxByDay = (/(localhost)/.test(baseUrl)) ? 2:500;
+    const rex = new RegExp('(localhost|(.*)github.dev)','ig');
+    const maxByDay = (rex.test(baseUrl)) ? 2:500;
 
     res.setHeader("Content-Type", "text/json");
 
@@ -98,6 +100,7 @@ router.post("/", async (req, res) => {
       }
     }
   } catch (err) {
+    console.log(err);
     debug(err);
     res.send({ longUrl: longUrl, res: { state: 2, msg:  JSON.stringify( err ), data: { err: err } } });
   }
