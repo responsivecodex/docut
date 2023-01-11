@@ -1,0 +1,28 @@
+{
+	"image": "responsivecodex/alpine-nodejs",
+	"mounts": ["source=${localWorkspaceFolder},target=/usr/src,type=bind,consistency=cached"],
+	"remoteUser": "root",
+	"workspaceFolder": "/usr/src",
+	"forwardPorts": [
+	3000
+	],
+	"postStartCommand": "export PS1=\"\\e[0;33m[\\u@\\D{DDMMAA}\\A \\w]\\$ \\e[m\"",
+	"containerEnv": {
+		"PS1": "\\e[0;33m[\\u@\\D{%d%m%Y}\\A \\w] cli> \\e[m"
+		,"PWD": "\\e[0;33m[\\u@\\D{%d%m%Y}\\A \\w] cli> \\e[m"
+	},
+	"remoteEnv":{
+		"PS1": "\\e[0;33m[\\u@\\d\\A \\w]\\$ \\e[m"
+		,"PWD": "\\e[0;33m[\\u@\\d\\A \\w]\\$ \\e[m"
+	},
+	"extensions": [
+		"glenn2223.live-sass",
+		"esbenp.prettier-vscode",
+		"hansuxdev.bootstrap5-snippets",
+		"wallabyjs.quokka-vscode",
+		"joeyyizhao.mongo-runner",
+		"mongodb.mongodb-vscode"
+	]
+}
+
+

@@ -3,7 +3,7 @@
   path = require("path"),
   cookieParser = require("cookie-parser"),
   logger = require("morgan"),
-  rcConfig = require("./rc-config.json"),
+  rcConfig = require("../bitbucket/docut/rc-config.json"),
   indexRouter = require("./routes/partials/index"),
   shortenUrl = require("./routes/shortenUrl"),
   goUrl = require("./routes/goUrl"),
@@ -14,7 +14,7 @@ var app = express();
 
 console.log("Module: app");
 console.log("\n\nWake Up Sleeping Beauty...");
-console.log("Entorno: [" + (rcConfig.setup.environment === "development" ? "development" : "production") +"]");
+console.log("Entorno: [" + (rcConfig.setup.environment === "development" ? "development" : "production"));
 
 if (rcConfig.setup.environment === "development") {
   app.set("env", rcConfig.setup.environment);
@@ -90,3 +90,6 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+
+
+

@@ -8,15 +8,8 @@
 </div>
 
 <section class="d-flex justify-content-evenly flex-sm-row flex-column mb-4">
-  <a
-    id="btnHide"
-    class="btn btn-secondary col-1 ms-2 display-sm-no"
-    data-bs-toggle="collapse"
-    href="#Instructions"
-    role="button"
-    aria-expanded="false"
-    aria-controls="Instructions" aria-label="btnHide"
-  >
+  <a id="btnHide" class="btn btn-secondary col-1 ms-2 display-sm-no" data-bs-toggle="collapse" href="#Instructions"
+    role="button" aria-expanded="false" aria-controls="Instructions" aria-label="btnHide">
     <i class="fa fa-angle-down" aria-hidden="true"></i>
   </a>
   <div id="Instructions" class="card m-sm-0 m-3 mt-2 face dark rounded-medium col-sm-4 col-11 collapse show">
@@ -27,7 +20,7 @@
     <div class="card-body">
       <h4 class="card-title relative"><%- lang.instructionsTitle01 %></h4>
       <ul>
-        <li><%- lang.instrT01_01 %></li> 
+        <li><%- lang.instrT01_01 %></li>
         <li><%- lang.instrT01_02 %></li>
         <li><%- lang.instrT01_03 %></li>
         <li><%- lang.instrT01_04 %></li>
@@ -42,14 +35,14 @@
       <p class="card-text"><%- lang.supportMe01%></p>
 
       <form action="https://www.paypal.com/donate" method="post" target="_top">
-<input type="hidden" name="business" value="8ZK5LYET8NU6G" />
-<input type="hidden" name="no_recurring" value="0" />
-<input type="hidden" name="item_name" value="<%- lang.donateSlogan%>" />
-<input type="hidden" name="currency_code" value="MXN" />
-<input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="<%- lang.donateLegend01%>" alt="<%- lang.donateLegend02%>" />
-<img alt="" border="0" src="https://www.paypal.com/es_MX/i/scr/pixel.gif" width="1" height="1" />
-</form>
-
+        <input type="hidden" name="business" value="8ZK5LYET8NU6G" />
+        <input type="hidden" name="no_recurring" value="0" />
+        <input type="hidden" name="item_name" value="<%- lang.donateSlogan%>" />
+        <input type="hidden" name="currency_code" value="MXN" />
+        <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif" border="0"
+          name="submit" title="<%- lang.donateLegend01%>" alt="<%- lang.donateLegend02%>" />
+        <img alt="" border="0" src="https://www.paypal.com/es_MX/i/scr/pixel.gif" width="1" height="1" />
+      </form>
     </div>
   </div>
 
@@ -61,29 +54,27 @@
       <div class="card-body p-0 shorten">
         <form action="/shorten" method="post">
           <fieldset>
-            <input type="text" id="kmsd" name="kmsd" class="hidden" value="No" aria-label="kmsd"/>
+            <input type="text" id="kmsd" name="kmsd" class="hidden" value="No" aria-label="kmsd" />
             <label for="longUrl" class="form-label"><%- lang.trimLabel01%></label>
             <div class="d-flex align-items-center">
-              <input
-                id="longUrl"
-                name="longUrl"
-                class="form-control flex-fill rounded-soft"
-                type="text"
-                size="100"
-                placeholder="https://responsivecodex.wordpress.com"
-                aria-label="longUrl"
-                value="<%= data.shortenUrl %>"
-              />
-              <button id="btnClearInputLU" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="<%= lang.eraseField %>" class="ms-1 face p-0 rounded-circle flex-fill" aria-label="btnClearInputLU">
+              <input id="longUrl" name="longUrl" class="form-control flex-fill rounded-soft" type="text" size="100"
+                placeholder="https://responsivecodex.wordpress.com" aria-label="longUrl"
+                value="<%= data.shortenUrl %>" />
+              <button id="btnClearInputLU" type="button" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-original-title="<%= lang.eraseField %>" class="ms-1 face p-0 rounded-circle flex-fill"
+                aria-label="btnClearInputLU">
                 <i class="fa fa-eraser flex-shrink-1 p-1 white" aria-hidden="true"></i>
               </button>
             </div>
           </fieldset>
           <div class="submit d-flex flex-row mt-2 align-items-center">
-            <button id="btnLongUrl" disabled="disabled" type="button" class="me-3 btn btn-secondary face rounded-soft" aria-label="btnLongUrl">
+            <button id="btnLongUrl" disabled="disabled" type="button" class="me-3 btn btn-secondary face rounded-soft"
+              aria-label="btnLongUrl">
               <%- lang.trimBtn01%>
             </button>
-            <p class="m-0 p-0 ms-5" id="shortenMsg"><%= data.msgShortenUrl %></p>
+            <p class="m-0 p-0 ms-5" id="shortenMsg">
+              <%= data.msgShortenUrl %>
+            </p>
           </div>
         </form>
       </div>
@@ -98,27 +89,25 @@
           <fieldset>
             <label for="shortenUrl" class="form-label"><%- lang.testLabel01%></label>
             <div class="d-flex align-items-center">
-              <input
-                type="text"
-                id="shortenUrl"
-                name="shortenUrl"
-                class="form-control flex-fill rounded-soft"
-                size="54"
-                placeholder="https://docut.herokuapp.com/HgHASGKDUijc"
-                aria-label="shortenUrl"
-                value="<%= data.goUrl %>"
-              />
-              <button id="btnClearInputGo" type="button" class="ms-1 face p-0 rounded-circle flex-fill" aria-label="btnClearInputGo" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="<%= lang.eraseField %>" >
+              <input type="text" id="shortenUrl" name="shortenUrl" class="form-control flex-fill rounded-soft" size="54"
+                placeholder="https://docut.herokuapp.com/HgHASGKDUijc" aria-label="shortenUrl"
+                value="<%= data.goUrl %>" />
+              <button id="btnClearInputGo" type="button" class="ms-1 face p-0 rounded-circle flex-fill"
+                aria-label="btnClearInputGo" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-original-title="<%= lang.eraseField %>">
                 <i class="fa fa-eraser flex-shrink-1 p-1 white" aria-hidden="true"></i>
               </button>
             </div>
           </fieldset>
 
           <div class="d-flex flex-row mt-2 align-items-center">
-            <button id="btnGo" disabled="disabled" type="button" class="me-3 btn btn-secondary face rounded-soft" aria-label="btnGo">
+            <button id="btnGo" disabled="disabled" type="button" class="me-3 btn btn-secondary face rounded-soft"
+              aria-label="btnGo">
               <%- lang.testBtn01%>
             </button>
-            <p class="m-0 p-0 ms-5" id="goMsg"><%= data.msgGoUrl %></p>
+            <p class="m-0 p-0 ms-5" id="goMsg">
+              <%= data.msgGoUrl %>
+            </p>
           </div>
         </form>
       </div>
@@ -129,28 +118,11 @@
         <h2 class="small"><%- lang.extLinksTitle%></h2>
       </div>
       <div class="card-body p-0 d-flex flex-column">
-        <a
-          class=""
-          href="https://bitly.com/"
-          aria-label=""
-          target="_blank"
-          rel="noopener noreferrer"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top" aria-label="link-bitly"
-          title="Bit.ly"
-          >https://bitly.com/</a
-        >
-        <a
-          class=""
-          href="https://www.shorturl.at/"
-          aria-label=""
-          target="_blank"
-          rel="noopener noreferrer"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top" aria-label="link-shorturl"
-          title="short url"
-          >https://www.shorturl.at/</a
-        >
+        <a class="" href="https://bitly.com/" aria-label="" target="_blank" rel="noopener noreferrer"
+          data-bs-toggle="tooltip" data-bs-placement="top" aria-label="link-bitly" title="Bit.ly">https://bitly.com/</a>
+        <a class="" href="https://www.shorturl.at/" aria-label="" target="_blank" rel="noopener noreferrer"
+          data-bs-toggle="tooltip" data-bs-placement="top" aria-label="link-shorturl"
+          title="short url">https://www.shorturl.at/</a>
       </div>
     </div>
   </div>
@@ -162,24 +134,19 @@
     <div class="modal-content face darken">
       <div class="modal-header">
         <h5 class="modal-title" id="infoUrlLabel"><%- lang.mdlDocutTitle%></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" aria-label="btnClose"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          aria-label="btnClose"></button>
       </div>
       <div class="modal-body">
         <label for="shortenUrl" class="form-label"><%- lang.mdlDocutLabel01%></label>
-        <input
-          type="text"
-          id="mdlUrl"
-          name="mdlUrl"
-          size="48"
-          class="form-control face"
-          placeholder="https://docut.herokuapp.com/HgHASGKDUijc"
-          aria-label="mdlUrl"
-          value="<%= data.goUrl %>"
-        />
+        <input type="text" id="mdlUrl" name="mdlUrl" size="48" class="form-control face"
+          placeholder="https://docut.herokuapp.com/HgHASGKDUijc" aria-label="mdlUrl" value="<%= data.goUrl %>" />
       </div>
       <div class="modal-footer">
-        <button id="btnCopy" type="button" class="btn btn-secondary face" aria-label="btnCopy"><%- lang.mdlDocutBtn01%></button>
-        <button type="button" class="btn btn-secondary face" data-bs-dismiss="modal" aria-label="btnClose2"><%- lang.mdlDocutLabel02%></button>
+        <button id="btnCopy" type="button" class="btn btn-secondary face" aria-label="btnCopy"><%-
+            lang.mdlDocutBtn01%></button>
+        <button type="button" class="btn btn-secondary face" data-bs-dismiss="modal" aria-label="btnClose2"><%-
+            lang.mdlDocutLabel02%></button>
       </div>
     </div>
   </div>
@@ -189,15 +156,18 @@
     <div class="modal-content face darken">
       <div class="modal-header">
         <h5 class="modal-title" id="avExceedLabel"><%- lang.mdlAvTitle%>Wait!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" aria-label="btnClose3"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          aria-label="btnClose3"></button>
       </div>
       <div class="modal-body">
         <p><%- lang.mdlAvBody%></p>
         <p class="hidden"></p>
       </div>
       <div class="modal-footer">
-        <button id="btnDelete" type="button" class="btn btn-secondary face" aria-label="btnDelete"><%- lang.mdlAvBtn01%></button>
-        <button id="dismiss" type="button" class="btn btn-secondary face" data-bs-dismiss="modal" aria-label="btnClose4"><%- lang.mdlAvBtn02%></button>
+        <button id="btnDelete" type="button" class="btn btn-secondary face" aria-label="btnDelete"><%-
+            lang.mdlAvBtn01%></button>
+        <button id="dismiss" type="button" class="btn btn-secondary face" data-bs-dismiss="modal"
+          aria-label="btnClose4"><%- lang.mdlAvBtn02%></button>
       </div>
     </div>
   </div>
@@ -207,34 +177,19 @@
     <div class="modal-content face darken">
       <div class="modal-header">
         <h5 class="modal-title" id="avCookiesLabel"><%- lang.mdlCookiesTitle%></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" aria-label="btnClose5"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          aria-label="btnClose5"></button>
       </div>
       <div class="modal-body">
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button
-              class="nav-link active"
-              id="nav-accept-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#nav-accept"
-              type="button"
-              role="tab"
-              aria-controls="nav-accept"
-              aria-selected="true"  aria-label="nav-accept-tab"
-            >
-            <%- lang.mdlCookiesTab01%>
+            <button class="nav-link active" id="nav-accept-tab" data-bs-toggle="tab" data-bs-target="#nav-accept"
+              type="button" role="tab" aria-controls="nav-accept" aria-selected="true" aria-label="nav-accept-tab">
+              <%- lang.mdlCookiesTab01%>
             </button>
-            <button
-              class="nav-link"
-              id="nav-moreinfo-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#nav-moreinfo"
-              type="button"
-              role="tab"
-              aria-controls="nav-moreinfo"
-              aria-selected="false"   aria-label="nav-moreinfo-tab"
-            >
-            <%- lang.mdlCookiesTab02%>
+            <button class="nav-link" id="nav-moreinfo-tab" data-bs-toggle="tab" data-bs-target="#nav-moreinfo"
+              type="button" role="tab" aria-controls="nav-moreinfo" aria-selected="false" aria-label="nav-moreinfo-tab">
+              <%- lang.mdlCookiesTab02%>
             </button>
           </div>
         </nav>
@@ -260,9 +215,13 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button id="cookiesAccept" type="button" class="btn btn-secondary face" onClick="acceptCookies();"  aria-label="cookiesAccept"><%- lang.mdlCookiesBtn1%></button>
-        <button id="cookiesDenied" type="button" class="btn btn-secondary face" onClick="noCookies();"  aria-label="cookiesDenied"><%- lang.mdlCookiesBtn02%></button>
+        <button id="cookiesAccept" type="button" class="btn btn-secondary face" onClick="acceptCookies();"
+          aria-label="cookiesAccept"><%- lang.mdlCookiesBtn1%></button>
+        <button id="cookiesDenied" type="button" class="btn btn-secondary face" onClick="noCookies();"
+          aria-label="cookiesDenied"><%- lang.mdlCookiesBtn02%></button>
       </div>
     </div>
   </div>
 </div>
+
+

@@ -1,7 +1,7 @@
 {
-	"name": "Ubuntu",
+	"name": "ResponsiveCodex/alpine-nodejs",
     "build": {
-        "dockerfile": "Dockerfile",
+        "dockerfile": "Dockerfile"
     },
 	//"image": "responsivecodex/alpine-nodejs",
 	"forwardPorts": [
@@ -21,3 +21,5 @@
 		"BASE_URL": "https://responsivecodex-glorious-happiness-jgggv6p6xpg2jjqx-3000.preview.app.github.dev/"
 	}
 }
+
+

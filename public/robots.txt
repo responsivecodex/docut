@@ -2,3 +2,4 @@ Sitemap: https://docut.herokuapp.com/sitemap.xml
 User-agent: *
 Allow: /
 Disallow:
+

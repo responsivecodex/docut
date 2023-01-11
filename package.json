@@ -9,8 +9,8 @@
   },
   "contributors": [
     {
-      "name": "Responsive Codex",
-      "email": "responsivecodex@gmail.com",
+      "name": "Secundino García",
+      "email": "sequitosan@gmail.com",
       "url": "https://responsivecodex.wordpress.com"
     }
   ],
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/responsivecodex/docut.git"
   },
-  "heroku": {
+  "heroku":{
     "type": "git",
     "url": "https://git.heroku.com/docut.git"
   },
@@ -47,7 +47,7 @@
     "init-3": "heroku git:remote -a docut",
     "init-4": "git add .",
     "fast-commit-heroku": "git add . && git commit -am 'Responsive Codex - fast commit' && git push heroku master",
-    "heroku push": "git push -f heroku master",
+    "heroku push": "git push -f heroku master", 
     "heroku-log": "heroku logs --tail",
     "heroku-versions": "heroku releases",
     "heroku-process": "heroku ps",
@@ -61,8 +61,10 @@
     "upr-npm": "npm install -g npm@latestnpm ",
     "git-0": "git remote add origin https://github.com/responsivecodex/docut.git",
     "github push": "git add . && git commit -am 'Fix merge heroku' && git push -f origin master",
-    "git-erasefile1": "git stash save 'will come back to continue working later on' && git filter-branch -f --prune-empty --index-filter  'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
-    "git-erasefile2": "git filter-branch --prune-empty  -f --index-filter 'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD"
+    "git-erasefile1":"git stash save 'will come back to continue working later on' && git filter-branch -f --prune-empty --index-filter  'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
+    "git-erasefile2":"git filter-branch --prune-empty  -f --index-filter 'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
+    "recursive01": "find . -type f -exec touch {} +",
+    "recursive02": "find . -type f -exec git rm --cached {} +"
   },
   "nodemonConfig": {
     "ignore": [
@@ -92,8 +94,8 @@
     ]
   },
   "engines": {
-    "node": "v16.19.0",
-    "npm": "8.19.3"
+    "node": "v14.17.1",
+    "npm": "7.17.0"
   },
   "browserslist": [
     "not ie",
@@ -122,3 +124,5 @@
     "valid-url": "^1.0.9"
   }
 }
+
+

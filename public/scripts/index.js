@@ -2,7 +2,7 @@ let wndAlert = 0;
 var mdlCookies = undefined;
 
 function noCookies() {
-  window.location.href = "http://docut.herokuapp.com";
+  window.location.href = "http://sgarcia-resume.herokuapp.com";
 }
 
 function acceptCookies() {
@@ -99,21 +99,18 @@ document.querySelector("#btnLongUrl").addEventListener("click", (e) => {
             document.querySelector("#avExceed #btnDelete").classList.add("hidden");
             document.querySelector("#avExceed .modal-body").innerHTML = "<p>" + res.msg + "</p>";
             document.querySelector("#avExceed #dismiss").innerHTML = "Ok";
-            console.log( res.msg);
             wndAlert.show();
             break;
 
           default:
             document.querySelector("#shortenMsg").innerHTML = res.msg;
             clearMsg(document.querySelector("#shortenMsg"), document.querySelector("#longUrl"));
-            console.log( res.msg);
             break;
         }
       }
     })
     .catch(function (error) {
       document.querySelector("#shortenMsg").innerHTML = "Problemas con la invocación... intente más tarde.";
-      console.log( error );
       clearMsg(document.querySelector("#shortenMsg"), document.querySelector("#longUrl"), 6000);
     })
     .finally(function () {
@@ -184,3 +181,5 @@ const clearMsg = (elemMsg, elemInput, time = 4000) => {
     elemInput.value = "";
   }, time);
 };
+
+

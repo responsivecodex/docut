@@ -24,6 +24,7 @@ const serverless = require('serverless-http');
  */
 
 console.log("Module: www");
+
 var server = null;
 if (process.env.APP_ENVIRONMENT == "dev") {
   /**
@@ -104,3 +105,4 @@ function onListening() {
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
 }
+
