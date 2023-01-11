@@ -3,7 +3,7 @@
   path = require("path"),
   cookieParser = require("cookie-parser"),
   logger = require("morgan"),
-  rcConfig = require("rc-config.json"),
+  rcConfig = require("./rc-config.json"),
   indexRouter = require("./routes/partials/index"),
   shortenUrl = require("./routes/shortenUrl"),
   goUrl = require("./routes/goUrl"),
