@@ -41,6 +41,9 @@
   "main": "./bin/www",
   "private": true,
   "scripts": {
+    "build": "netlify-lambda build express",
+    "start": "node ./bin/www",
+    "nodemon": "nodemon ./bin/www",
     "init-0": "npm i --package-lock-only && npm i",
     "init-1": "git init",
     "init-2": "heroku create docut",
@@ -51,8 +54,6 @@
     "heroku-log": "heroku logs --tail",
     "heroku-versions": "heroku releases",
     "heroku-process": "heroku ps",
-    "start": "node ./bin/www",
-    "nodemon": "nodemon ./bin/www",
     "docs": "jsdoc -c jsdoc.json",
     "test": "mocha",
     "scss": "sass --watch ./scss:public/css",
