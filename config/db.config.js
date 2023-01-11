@@ -3,34 +3,53 @@ const mongoose = require("mongoose"),
   path = require("path"),
   fs = require("fs");
 const pemFile = path.join(__dirname, "X509-cert.pem");
-//const pemFile = path.join('./config', "X509-cert.pem");
-console.log(pemFile);
-const credentials = [fs.readFileSync( pemFile)];
+const credentials = [fs.readFileSync(pemFile)];
 const mongoURL = process.env.MONGO_URL;
 const mongoUser = process.env.MONGO_USER;
 
+console.log("Trying to connect to Atlas....");
+
 mongoose.set('strictQuery', false);
-/*mongoose.connect(mongoURL, {
+mongoose.connect(mongoURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   ssl: true,
   user: mongoUser,
-  sslKey: credentials,
-  sslCert: credentials,
-}); */
+  sslKey: pemFile,
+  sslCert: pemFile,
+}).then(
+  () => {
+    console.log("Ready to use Atlas!");
+  },
+  err => {
+    console.log("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nFail to connect Atlas...");
+    console.log(err);
+    try {
+      db.close();
+    } catch (error) {
+    }
+  }
+);;
 
-mongoose.connect(mongoURL, {
-         ssl: true,
+/* mongoose.connect(mongoURL, {
+  ssl: true,
   user: mongoUser,
   sslValidate: true,
-        sslCA: pemFile,
-      }, function(err, db) {
-  console.log(err);      
-  try {
-    db.close();
-  } catch (error) {
+  sslCA: pemFile,
+}).then(
+  () => {
+    console.log("Ready to use Atlas!");
+  },
+  err => {
+    console.log("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nFail to connect Atlas...");
+    console.log(err);
+    try {
+      db.close();
+    } catch (error) {
+    }
   }
-});
+); */
+
 
 
 // establishing a database connection
@@ -40,10 +59,10 @@ mongoose.connect(mongoURL, {
 // })
 
 const connection = mongoose.connection;
-connection.on("error", console.error.bind(console, "\nConnection error:"));
+/* connection.on("error", console.error.bind(console, "\nConnection error:"));
 connection.once("open", function () {
   console.info("We're connected!\n");
-});
+}); */
 
 // export the connection object
 module.exports = connection;
