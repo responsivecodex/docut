@@ -19,10 +19,7 @@ const debug = require("debug")("src:server");
 const http = require("http");
 const serverless = require('serverless-http');
 
-/**
- * Get port from environment and store in Express.
- */
-
+app.use('/.netlify/functions/api', router);
 console.log("Module: www");
 
 var server = null;

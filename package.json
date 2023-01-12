@@ -20,9 +20,9 @@
     "type": "git",
     "url": "https://github.com/responsivecodex/docut.git"
   },
-  "heroku":{
+  "heroku": {
     "type": "git",
-    "url": "https://git.heroku.com/docut.git"
+    "url": "git+https://git.heroku.com/docut.git"
   },
   "license": "Software Propietario",
   "keywords": [
@@ -41,8 +41,9 @@
   "main": "./bin/www",
   "private": true,
   "scripts": {
-    "build": "netlify-lambda build express",
-    "start": "node ./bin/www",
+    "start": "NODE_ENV=development ./node_modules/.bin/netlify-lambda serve .",
+    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build .",
+    "start-local": "node ./bin/www",
     "nodemon": "nodemon ./bin/www",
     "init-0": "npm i --package-lock-only && npm i",
     "init-1": "git init",
@@ -50,7 +51,7 @@
     "init-3": "heroku git:remote -a docut",
     "init-4": "git add .",
     "fast-commit-heroku": "git add . && git commit -am 'Responsive Codex - fast commit' && git push heroku master",
-    "heroku push": "git push -f heroku master", 
+    "heroku push": "git push -f heroku master",
     "heroku-log": "heroku logs --tail",
     "heroku-versions": "heroku releases",
     "heroku-process": "heroku ps",
@@ -62,8 +63,8 @@
     "upr-npm": "npm install -g npm@latestnpm ",
     "git-0": "git remote add origin https://github.com/responsivecodex/docut.git",
     "github push": "git add . && git commit -am 'Fix merge heroku' && git push -f origin master",
-    "git-erasefile1":"git stash save 'will come back to continue working later on' && git filter-branch -f --prune-empty --index-filter  'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
-    "git-erasefile2":"git filter-branch --prune-empty  -f --index-filter 'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
+    "git-erasefile1": "git stash save 'will come back to continue working later on' && git filter-branch -f --prune-empty --index-filter  'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
+    "git-erasefile2": "git filter-branch --prune-empty  -f --index-filter 'git rm --cached --ignore-unmatch -r ./.vscode/launch.json' HEAD",
     "recursive01": "find . -type f -exec touch {} +",
     "recursive02": "find . -type f -exec git rm --cached {} +"
   },
@@ -121,9 +122,8 @@
     "mongoose": "^6.8.3",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.23",
+    "netlify-lambda": "^2.0.15",
     "serverless-http": "^3.1.1",
     "valid-url": "^1.0.9"
   }
 }
-
-
