@@ -1,5 +1,7 @@
 [build]
   functions = "functions"
+  command="npm run build"
+  publish="./bin/www.js"
 
 [dev]
-  publish = "./"
+  publish = "./bin/www.js"
