@@ -41,9 +41,8 @@
   "main": "./bin/www",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/.bin/netlify-lambda serve .",
-    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build .",
-    "start-local": "node ./bin/www",
+    "build": "npm i",
+    "start": "node ./bin/www",
     "nodemon": "nodemon ./bin/www",
     "init-0": "npm i --package-lock-only && npm i",
     "init-1": "git init",
