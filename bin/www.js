@@ -17,21 +17,14 @@ process.env.maxAgeCookies = rcConfig.setup.maxAgeCookies;
 const app = require("../app");
 const debug = require("debug")("src:server");
 const http = require("http");
-const serverless = require('serverless-http');
 
-app.use('/.netlify/functions/api', router);
 console.log("Module: www");
 
 var server = null;
-if (process.env.APP_ENVIRONMENT == "dev") {
-  /**
-  * Create HTTP server.
-  */
-  server = http.createServer(app);
-
-} else {
-  server = serverless(app);
-}
+/**
+* Create HTTP server.
+*/
+server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -39,13 +32,13 @@ if (process.env.APP_ENVIRONMENT == "dev") {
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 app.listen(port, () => {
-  console.log(`DOCUT app  is running on port ${ port }\n`);
+  console.log(`DOCUT app  is running on port ${port}\n`);
 });
 
-if (process.env.APP_ENVIRONMENT == "dev") {
-  server.on("error", onError);
-  server.on("listening", onListening);
-}
+server.on("error", onError);
+server.on("listening", onListening);
+
+
 
 /**
  * Normalize a port into a number, string, or false.
