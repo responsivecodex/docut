@@ -1716,7 +1716,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  background: var(--mariner) url("/images/dark-night.jpg") no-repeat fixed center;
+  background: var(--mariner) url("/public/scripts/images/dark-night.jpg") no-repeat fixed center;
   background-size: cover;
   color: white;
 }
@@ -2133,5 +2133,3 @@ a {
 .badge {
   font-weight: 300 !important;
 }/*# sourceMappingURL=base.css.map */
-
-
