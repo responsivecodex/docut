@@ -6,6 +6,7 @@
   - https://hub.docker.com/r/responsivecodex/alpine-nodejs
 - The environment in VM must be configurated:
   - Environment vars:
+    - DEBUG
     - MONGO_URL
     - MONGO_USER
     - BASE_URL

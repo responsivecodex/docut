@@ -16,7 +16,8 @@
                 "DEBUG": "*",
                 "MONGO_URL": "mongodb+srv://cluster0.jwm8v.mongodb.net/docut?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority",
                 "MONGO_USER": "rc-mongo-user02",
-                "APP_ENVIRONMENT": "dev"
+                "APP_ENVIRONMENT": "dev",
+                "BASE_URL": "http:/localhost"
             }
         },
         {
@@ -28,7 +29,8 @@
                 "DEBUG": "*",
                 "MONGO_URL": "mongodb+srv://cluster0.jwm8v.mongodb.net/docut?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority",
                 "MONGO_USER": "rc-mongo-user02",
-                "APP_ENVIRONMENT": "dev"
+                "APP_ENVIRONMENT": "dev",
+                "BASE_URL": "http:/localhost"
             }
         },
     ]

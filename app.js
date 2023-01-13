@@ -16,15 +16,6 @@ console.log("Module: app");
 console.log("\n\nWake Up Sleeping Beauty...");
 console.log("Entorno: [" + (rcConfig.setup.environment === "development" ? "development]" : "production]"));
 
-if (rcConfig.setup.environment === "development") {
-  app.set("env", rcConfig.setup.environment);
-  app.set("BASE_URL", rcConfig.setup.BASE_URL);
-}
-
-//process.env.BASE_URL = rcConfig.setup.BASE_URL;
-
-if (rcConfig.setup.environment === "development") app.set("BASE_URL", rcConfig.setup.BASE_URL);
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -88,6 +79,11 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+
+console.log("Environment vars:");
+console.log("BASE_ENV: " + process.env.BASE_URL);
+
 
 module.exports = app;
 
