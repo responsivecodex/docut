@@ -5,7 +5,6 @@ const { nanoid } = require("nanoid");
 const router = express.Router();
 const Url = require("../models/Url"); // import the Url database model
 const debug = require("debug")("shortenUrl");
-const connection = require("../config/db.config");
 
 debug("\n\nModule: shortenUrl");
 
@@ -35,7 +34,7 @@ router.post("/", async (req, res) => {
 
     // Validate because on production maybe return fail at get hostname
     if (!validUrl.isUri(baseUrl)) {
-      res.send({ longUrl: longUrl, res: { state: 1, msg: "Verify base Url", data: {} } });
+      res.send({ longUrl: longUrl, res: { state: 1, msg: "Verify base Url", data: {baseUrl: baseUrl} } });
     } else {
       // Validate Url...
       if (validUrl.isUri(longUrl)) {
