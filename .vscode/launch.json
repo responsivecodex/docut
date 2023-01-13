@@ -21,17 +21,19 @@
             }
         },
         {
+            "name": "Debug via npm",
             "type": "node",
             "request": "launch",
-            "name": "Debugging",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["--inspect", "run-script", "debug"],
             "program": "${workspaceFolder}/bin/www",
             "env": {
                 "DEBUG": "*",
                 "MONGO_URL": "mongodb+srv://cluster0.jwm8v.mongodb.net/docut?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority",
                 "MONGO_USER": "rc-mongo-user02",
                 "APP_ENVIRONMENT": "dev",
-                "BASE_URL": "http:/localhost"
+                "BASE_URL": "https://responsivecodex-glorious-happiness-jgggv6p6xpg2jjqx-3000.preview.app.github.dev/"
             }
-        },
+          }
     ]
 }

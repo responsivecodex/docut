@@ -43,6 +43,7 @@
   "scripts": {
     "build": "npm i",
     "start": "node ./bin/www",
+    "debug": "node ./bin/www",
     "nodemon": "nodemon ./bin/www",
     "init-0": "npm i --package-lock-only && npm i",
     "init-1": "git init",

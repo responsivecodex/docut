@@ -39,6 +39,10 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   const shortenUrl = "";
   try {
+    if (req.baseUrl == '/healthz'){
+      res.status(200).render("healthz");
+      return;
+    }
     const baseUrl = process.env.BASE_URL;
     res.setHeader("Content-Type", "text/html");
     debug("---[ /goUrl... GET]---");

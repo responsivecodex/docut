@@ -7,7 +7,7 @@
   indexRouter = require("./routes/partials/index"),
   shortenUrl = require("./routes/shortenUrl"),
   goUrl = require("./routes/goUrl"),
-  usersRouter = require("./routes/users"),
+  healthzRouter = require("./routes/healthz"),
   localeMiddleWare = require("./middleware/locale"),
   publicFolder = path.join(__dirname, "public");
 var app = express();
@@ -58,7 +58,7 @@ let setCache = function (req, res, next) {
 app.use(setCache)
 
 app.use(localeMiddleWare);
-app.use("/users", usersRouter);
+app.use("/healthz", healthzRouter);
 app.use("/shorten", shortenUrl);
 app.use("/goUrl", goUrl);
 app.use("/:code", goUrl);
@@ -77,7 +77,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  res.redirect("/");
 });
 
 
