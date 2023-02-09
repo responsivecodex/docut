@@ -41,8 +41,9 @@ let setCache = function (req, res, next) {
 
   // you only want to cache for GET requests
   if (req.method == 'GET') {
-    res.set('Cache-control', 'public, max-age=3000');
+    res.set('Cache-control', 'public, max-age=3');
     res.set('X-Content-Type-Options', 'nosniff');
+    res.set('Cache-Control', 'no-store');
 
   } else {
     // for the other requests set strict no caching parameters

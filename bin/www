@@ -31,6 +31,7 @@ server = http.createServer(app);
  */
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
+app.disable('view cache');
 app.listen(port, () => {
   console.log(`DOCUT app  is running on port ${port}\n`);
 });
